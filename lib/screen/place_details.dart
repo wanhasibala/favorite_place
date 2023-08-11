@@ -1,4 +1,3 @@
-import 'package:favorite_place/main.dart';
 import 'package:flutter/material.dart';
 
 import 'package:favorite_place/models/place.dart';
@@ -21,7 +20,7 @@ class PlaceDetailsScreen extends StatelessWidget {
             const SizedBox(
               height: 40,
             ),
-            Text(
+            Text( 
               place.name,
               style: Theme.of(context)
                   .textTheme
