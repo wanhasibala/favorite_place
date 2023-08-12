@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:favorite_place/widgets/image_input.dart';
+import 'package:favorite_place/widgets/location_input.dart';
 import 'package:flutter/material.dart';
 
 import 'package:favorite_place/providers/user_places.dart';
@@ -25,7 +26,9 @@ class _AddPlaceState extends ConsumerState<AddPlace> {
     if (enteredTitle.isEmpty || _selectedImage == null) {
       return;
     }
-    ref.read(userPlaceProvider.notifier).addPlace(enteredTitle, _selectedImage!);
+    ref
+        .read(userPlaceProvider.notifier)
+        .addPlace(enteredTitle, _selectedImage!);
 
     Navigator.of(context).pop();
   }
@@ -63,6 +66,10 @@ class _AddPlaceState extends ConsumerState<AddPlace> {
                 _selectedImage = image;
               },
             ),
+            const SizedBox(
+              height: 10,
+            ),
+            const LocationInput(),
             const SizedBox(
               height: 16,
             ),
